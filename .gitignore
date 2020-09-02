@@ -1,3 +1,4 @@
 tmp
 .*.swp
 a.out
+__pycache__
