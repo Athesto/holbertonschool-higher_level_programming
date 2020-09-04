@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     argc = len(argv)
     OPERATORS = "+-*/"
-    functions = [add,sub,mul,div]
+    functions = [add, sub, mul, div]
     a = int(argv[1])
     operator = argv[2]
     b = int(argv[3])
