@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 	unsigned int a_idx;		/* array index */
 
 	/* check if it's a valid list */
-	if (!head || !(*head)->next)
+	if (!head || !*head || !(*head)->next)
 		return (true);
 
 	for (l_len = 0; runner; l_len++)
