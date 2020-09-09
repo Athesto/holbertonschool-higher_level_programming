@@ -12,6 +12,9 @@ void print_python_list_info(PyObject *p)
 	PyTypeObject *type;
 	const char *name;
 
+	if (p == NULL)
+		return;
+
 	len = (unsigned int) PyList_Size(p);
 	allocated = (unsigned int) ((PyListObject *)p)->allocated;
 	printf("[*] Size of the Python List = %d\n", len);
