@@ -37,7 +37,11 @@ int is_palindrome(listint_t **head)
 	for (a_idx = 0; a_idx < l_len / 2; a_idx++)
 	{
 		if ((array[a_idx] - array[l_len - a_idx - 1]) != 0)
+		{
+			free(array);
 			return (false);
+		}
 	}
+	free(array);
 	return (true);
 }
