@@ -23,7 +23,6 @@ int is_palindrome(listint_t **head)
 	for (l_len = 0; runner; l_len++)
 		runner = runner->next;
 
-	printf("len = %d\n", l_len);
 	array = malloc(l_len * sizeof(*array));
 
 	/* fill the array */
