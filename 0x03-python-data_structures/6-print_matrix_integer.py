@@ -4,4 +4,4 @@ def print_matrix_integer(matrix=[[]]):
         print()
         return
     for m_idx in range(len(matrix)):
-        print("{} {} {}".format(*matrix[m_idx]))
+        print("{:d} {:d} {:d}".format(*matrix[m_idx]))
