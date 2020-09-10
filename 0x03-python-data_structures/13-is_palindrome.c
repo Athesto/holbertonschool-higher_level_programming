@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #define true 1
 #define false !true
+#define BUFSIZE 1024
 
 /**
  * is_palindrome - check if it's a palindrome list
@@ -15,23 +16,27 @@ int is_palindrome(listint_t **head)
 	listint_t *runner = *head;	/* runner pointer */
 	int *array;				/* array of numbers */
 	unsigned int a_idx;		/* array index */
+	size_t buf_size = BUFSIZE;
 
 	/* check if it's a valid list */
 	if (!head || !*head || !(*head)->next)
 		return (true);
-
-	for (l_len = 0; runner; l_len++)
-		runner = runner->next;
-
-	array = malloc(l_len * sizeof(*array));
+	array = malloc(BUFSIZE);
 
 	/* fill the array */
 	runner = *head;
-	for (a_idx = 0; a_idx < l_len; a_idx++)
+	for (a_idx = 0; runner; a_idx++)
 	{
+		l_len = a_idx;
 		array[a_idx] = runner->n;
 		runner = runner->next;
+		if (a_idx > buf_size)
+		{
+			buf_size += BUFSIZE;
+			array = realloc(array, buf_size);
+		}
 	}
+	l_len++;
 
 	/* check array */
 	for (a_idx = 0; a_idx < l_len / 2; a_idx++)
