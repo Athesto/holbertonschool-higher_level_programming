@@ -11,7 +11,7 @@ def roman_to_int(roman_string):
             if carry[0] == c:
                 carry[1] += decode[c]
             elif decode[carry[0]] < decode[c]:
-                sum +=  - carry[1]
+                sum -= carry[1]
                 carry[0] = c
                 carry[1] = decode[c]
             else:
