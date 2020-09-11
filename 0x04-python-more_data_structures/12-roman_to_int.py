@@ -6,6 +6,8 @@ def roman_to_int(roman_string):
                   'C': 100, 'D': 500, 'M': 100}
         carry = ['I', 0]
         for c in roman_string:
+            if c not in decode :
+                return 0
             if carry[0] == c:
                 carry[1] += decode[c]
             elif decode[carry[0]] < decode[c]:
