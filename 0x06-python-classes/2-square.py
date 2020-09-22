@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+'''Excercise 2'''
+
+
 class Square:
+    '''Square with size review'''
     def __init__(self, size=0):
         try:
             self.__size = size
