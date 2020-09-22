@@ -10,4 +10,4 @@ class Square:
             if size < 0:
                 raise ValueError("size must be >= 0")
         except TypeError:
-            print("size must be an integer")
+            raise NameError("size must be an integer")
