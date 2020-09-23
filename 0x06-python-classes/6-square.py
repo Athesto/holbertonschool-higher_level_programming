@@ -6,13 +6,15 @@ class Square:
     '''Square class'''
 
     def __init__(self, size=0, position=(0, 0)):
-        self.size(size)
-        self.position(position)
+        self.size = size
+        self.position = position
 
+    @property
     def size(self):
         '''getter'''
         return self.__size
 
+    @size.setter
     def size(self, value):
         '''setter'''
         if type(value) is not int:
@@ -22,10 +24,12 @@ class Square:
         else:
             self.__size = value
 
+    @property
     def position(self):
         '''getter'''
         return self.__position
 
+    @position.setter
     def position(self, value):
         '''setter'''
         if type(value) is not tuple or len(value) != 2 or \
