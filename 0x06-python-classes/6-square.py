@@ -28,7 +28,7 @@ class Square:
 
     def position(self, value):
         '''setter'''
-        if type(value) is not tuple or len(value) is not 2 or \
+        if type(value) is not tuple or len(value) != 2 or \
                 any(list(map(lambda x: type(x) is not int or x < 0, value))):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
@@ -40,8 +40,8 @@ class Square:
 
     def my_print(self):
         '''printSquare, translated'''
-        if self.__size is 0:
-            print()
+        if self.__size == 0:
+            print("")
             return
         print("\n" * self.__position[1], end="")
         for row in range(self.__size):
