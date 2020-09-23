@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''move square'''
 
+
 class Square:
     '''Square class'''
 
@@ -27,7 +28,7 @@ class Square:
 
     def position(self, value):
         if len(value) is not 2 or type(value) is not tuple or \
-            any(list(map(lambda x: x<0 or type(x) is not int, value))):
+                any(list(map(lambda x: x < 0 or type(x) is not int, value))):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -45,14 +46,3 @@ class Square:
         for row in range(self.__size):
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
-
-
-
-
-
-
-
-
-
-
-
