@@ -101,12 +101,15 @@ void print_python_float(PyObject *p)
 	}
 	/* printf("  value: %.g\n", PyFloat_AsDouble(p)); */
 	/* printf("  value: %.1f\n", PyFloat_AsDouble(p)); */
-
+	/*
 	tmp = PyFloat_AsDouble(p);
 	printf("  value: %.16g", PyFloat_AsDouble(p));
 	if (tmp - (long)tmp == 0)
 		printf(".0");
 	putchar('\n');
+	*/
+	tmp = PyFloat_AsDouble(p);
+	printf("  value: %s\n", PyOS_double_to_string(tmp, 'f', NULL, NULL));
 }
 
 /**
