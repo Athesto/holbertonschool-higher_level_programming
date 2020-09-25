@@ -92,6 +92,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	float tmp;
+
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
 	{
@@ -102,9 +103,8 @@ void print_python_float(PyObject *p)
 	/* printf("  value: %.1f\n", PyFloat_AsDouble(p)); */
 
 	tmp = PyFloat_AsDouble(p);
-
-	printf("  value: %.g", PyFloat_AsDouble(p));
-	if (tmp - (int)tmp == 0)
+	printf("  value: %.16g", PyFloat_AsDouble(p));
+	if (tmp - (long)tmp == 0)
 		printf(".0");
 	putchar('\n');
 }
