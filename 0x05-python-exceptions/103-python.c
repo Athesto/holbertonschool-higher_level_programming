@@ -103,7 +103,7 @@ void print_python_float(PyObject *p)
 
 	tmp = PyFloat_AsDouble(p);
 
-	printf("  value: %.15g", PyFloat_AsDouble(p));
+	printf("  value: %.g", PyFloat_AsDouble(p));
 	if (tmp - (int)tmp == 0)
 		printf(".0");
 	putchar('\n');
