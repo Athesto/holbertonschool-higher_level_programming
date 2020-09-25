@@ -24,7 +24,7 @@ void print_python_list(PyObject *p)
 		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
-	size = (unsigned int) PyList_Size(p);
+	size = (unsigned int) ((PyVarObject*)(p))->ob_size;
 	allocated = ((PyListObject *)p)->allocated;
 
 	printf("[*] Size of the Python List = %d\n", size);
