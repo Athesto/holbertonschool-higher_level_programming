@@ -53,6 +53,7 @@ void print_python_bytes(PyObject *p)
 	const char *str;
 	unsigned int s_idx; /* str index */
 
+	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
@@ -60,7 +61,6 @@ void print_python_bytes(PyObject *p)
 	}
 
 	size = (unsigned int) PyBytes_Size(p);
-	printf("[.] bytes object info\n");
 	printf("  size: %u\n", size);
 	printf("  trying string: ");
 
@@ -91,16 +91,22 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
+	float tmp;
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	/* printf("value2: %.15g\n", PyFloat_AsDouble(p)); */
-	/* printf("value2: %.1f\n", PyFloat_AsDouble(p)); */
+	/* printf("  value: %.g\n", PyFloat_AsDouble(p)); */
+	/* printf("  value: %.1f\n", PyFloat_AsDouble(p)); */
 
-	printf("value: %.15g\n", PyFloat_AsDouble(p));
+	tmp = PyFloat_AsDouble(p);
+
+	printf("  value: %.15g", PyFloat_AsDouble(p));
+	if (tmp - (int)tmp == 0)
+		printf(".0");
+	putchar('\n');
 }
 
 /**
