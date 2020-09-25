@@ -2,6 +2,9 @@
 #include <stdio.h>
 
 int isValidStr(const char *s);
+void print_python_list(PyObject *p);
+void print_python_float(PyObject *p);
+void print_python_bytes(PyObject *p);
 
 /**
  * print_python_list - ?
@@ -11,17 +14,33 @@ void print_python_list(PyObject *p)
 {
 	unsigned int size;
 	unsigned int allocated;
+	unsigned int i_idex; /* item index */
+	const char *i_name; /* item name */
+	PyObject *item;
 
+	printf("[*] Python list info\n");
 	if (!PyList_Check(p))
+	{
+		printf("  [ERROR] Invalid List Object\n");
 		return;
+	}
 	size = (unsigned int) PyList_Size(p);
 	allocated = ((PyListObject *)p)->allocated;
 
-	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", size);
 	printf("[*] Allocated = %d\n", allocated);
 
-	(void)p;
+	for (i_idex = 0; i_idex < size; i_idex++)
+	{
+		item = ((PyListObject *)p)->ob_item[i_idex];
+		i_name = item->ob_type->tp_name;
+		printf("Element %d: %s\n", i_idex, i_name);
+		if (strcmp("bytes", i_name) == 0)
+			print_python_bytes(item);
+		else if (strcmp("float", i_name) == 0)
+			print_python_float(item);
+	}
+
 }
 
 /**
@@ -35,14 +54,18 @@ void print_python_bytes(PyObject *p)
 	unsigned int s_idx; /* str index */
 
 	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
+	}
 
 	size = (unsigned int) PyBytes_Size(p);
 	printf("[.] bytes object info\n");
 	printf("  size: %u\n", size);
-	printf("  try string: ");
+	printf("  trying string: ");
 
-	str = PyBytes_AsString(p);
+	/* Create my own PyByte_AsString()*/
+	str = ((PyBytesObject *)p)->ob_sval;
 
 	if (isValidStr(str))
 		printf("%s\n", str);
@@ -52,12 +75,14 @@ void print_python_bytes(PyObject *p)
 	printf("  first %d bytes: ", (size > 9) ? 10 : size + 1);
 	for (s_idx = 0; s_idx < size + 1 && s_idx < 10; s_idx++)
 	{
-		printf("%02X", str[s_idx] & 0xFF);
+		printf("%02x", str[s_idx] & 0xFF);
 		if (s_idx + 1 < size + 1 && s_idx + 1 < 10)
 			putchar(' ');
 		else
 			putchar('\n');
 	}
+
+
 }
 
 /**
@@ -66,7 +91,24 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
-	(void) p;
+	float tmp;
+
+	printf("[.] float object info\n");
+	if (!PyFloat_Check(p))
+	{
+		printf("  [ERROR] Invalid Float Object\n");
+		return;
+	}
+	/* printf("value2: %.15g\n", PyFloat_AsDouble(p)); */
+	/* printf("value2: %.1f\n", PyFloat_AsDouble(p)); */
+
+	printf("value: %.15g", PyFloat_AsDouble(p));
+	tmp = PyFloat_AsDouble(p);
+	if (tmp < 0)
+		tmp = -tmp;
+	if (tmp - (int)tmp == 0)
+		printf(".0");
+	putchar('\n');
 }
 
 /**
@@ -84,8 +126,3 @@ int isValidStr(const char *s)
 	}
 	return (1);
 }
-
-
-
-
-
