@@ -3,3 +3,4 @@ tmp
 a.out
 __pycache__
 .vscode
+*.pyc
