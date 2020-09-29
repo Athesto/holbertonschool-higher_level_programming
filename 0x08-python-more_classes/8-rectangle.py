@@ -9,6 +9,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        '''bigger or equal'''
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
@@ -42,20 +43,18 @@ class Rectangle:
         '''setter'''
         if type(width) is not int:
             raise TypeError("width must be an integer")
-        elif width < 0:
+        if width < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = width
+        self.__width = width
 
     @height.setter
     def height(self, height):
         '''setter'''
         if type(height) is not int:
             raise TypeError("height must be an integer")
-        elif height < 0:
+        if height < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = height
+        self.__height = height
 
     def area(self):
         '''area'''
