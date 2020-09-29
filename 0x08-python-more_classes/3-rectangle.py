@@ -45,10 +45,12 @@ class Rectangle:
     def perimeter(self):
         '''perimeter'''
         if self.height is 0 or self.width is 0:
-            return ""
+            return 0
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
+        if self.width is 0 or self.height is 0:
+            return ""
         out = "#" * self.width + '\n'
         out = out * self.height
         out = out[:-1]
