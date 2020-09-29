@@ -60,7 +60,7 @@ class Rectangle:
     def __str__(self):
         if self.width is 0 or self.height is 0:
             return ""
-        out = Rectangle.print_symbol * self.width + '\n'
+        out = str(self.print_symbol) * self.width + '\n'
         out = out * self.height
         out = out[:-1]
         return out
