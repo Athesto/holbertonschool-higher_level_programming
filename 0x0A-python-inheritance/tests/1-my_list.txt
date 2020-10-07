@@ -15,3 +15,10 @@ test 2:
 check parent:
 	>>> MyList.__base__ is list
 	True
+
+divition by 0:
+	>>> a.append(0/0)
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	ZeroDivisionError: division by zero
+
