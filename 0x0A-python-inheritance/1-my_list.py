@@ -6,10 +6,7 @@ class MyList(list):
     '''My list Class'''
     def print_sorted(self):
         '''print_sorted'''
-        list_sorted = self[:]
-        list_sorted.sort()
-        print(list_sorted)
-        del list_sorted
+        print(sorted(self))
 
 if __name__ == "__main__":
     import doctest
