@@ -20,3 +20,25 @@ add negative:
 	>>> a.append(-10)
 	>>> a.print_sorted()
 	[-10, 1, 2, 3]
+
+------------------------------------
+unusefull
+------------------------------------
+
+# test 2:
+# 	>>> type(a).__name__
+# 	'MyList'
+# 
+# check parent:
+# 	>>> MyList.__base__ is list
+# 	True
+# 
+# check isinstance:
+# 	>>> isinstance(a, list)
+# 	True
+# 
+# divition by 0:
+# 	>>> a.append(0/0)
+# 	Traceback (most recent call last):
+# 	  File "<stdin>", line 1, in <module>
+# 	ZeroDivisionError: division by zero
