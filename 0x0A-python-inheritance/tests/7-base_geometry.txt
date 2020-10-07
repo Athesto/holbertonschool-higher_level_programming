@@ -40,19 +40,6 @@ test input list:
 	...     print(e)
 	data must be an integer
 
-test input dict:
-	>>> try:
-	...     bg.integer_validator("data", {"hello":10})
-	... except Exception as e:
-	...     print(e)
-	data must be an integer
-
-test input float:
-	>>> try:
-	...     bg.integer_validator("data", 10.3)
-	... except Exception as e:
-	...     print(e)
-	data must be an integer
 
 ########################
 #    UNUSEFUL TESTS    #
