@@ -1,10 +1,16 @@
 	>>> MyList = __import__("1-my_list").MyList
 
-test 1:
+test empty list:
 	>>> a = MyList()
+	>>> a.print_sorted()
+	[]
+
+test unsorted:
 	>>> a.append(3)
 	>>> a.append(1)
 	>>> a.append(2)
+	>>> a
+	[3, 1, 2]
 	>>> a.print_sorted()
 	[1, 2, 3]
 
@@ -25,5 +31,3 @@ divition by 0:
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
 	ZeroDivisionError: division by zero
-
-
