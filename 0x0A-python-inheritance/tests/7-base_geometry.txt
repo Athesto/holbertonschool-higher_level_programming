@@ -40,12 +40,12 @@ test input list:
 	...     print(e)
 	data must be an integer
 
-test input list:
+test input None:
 	>>> try:
-	...     bg.integer_validator([], 13)
+	...     bg.integer_validator("data", None)
 	... except Exception as e:
 	...     print(e)
-
+	data must be an integer
 
 ########################
 #    UNUSEFUL TESTS    #
@@ -71,3 +71,9 @@ test input float:
 	... except Exception as e:
 	...     print(e)
 	data must be an integer
+
+test input name as empty list:
+	>>> try:
+	...     bg.integer_validator([], 13)
+	... except Exception as e:
+	...     print(e)
