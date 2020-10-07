@@ -2,8 +2,6 @@
 
 test empty list:
 	>>> a = MyList()
-	>>> a.print_sorted()
-	[]
 
 test main file:
 	>>> a.append(3)
