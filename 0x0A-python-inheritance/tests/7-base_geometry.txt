@@ -34,7 +34,6 @@ test empty integer_validator:
 	integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 
-
 ########################
 #    UNUSEFUL TESTS    #
 ########################
@@ -53,3 +52,9 @@ test input dict:
 	...     print(e)
 	data must be an integer
 
+test input float:
+	>>> try:
+	...     bg.integer_validator("data", 10.3)
+	... except Exception as e:
+	...     print(e)
+	data must be an integer
