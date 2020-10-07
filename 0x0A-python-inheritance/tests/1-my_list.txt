@@ -2,6 +2,8 @@
 
 test empty list:
 	>>> a = MyList()
+	>>> a.print_sorted()
+	[]
 
 test main file:
 	>>> a.append(3)
@@ -14,7 +16,7 @@ test main file:
 	>>> a
 	[3, 1, 2]
 
-
-------------------------------------
-unusefull
-------------------------------------
+add negative:
+	>>> a.append(-10)
+	>>> a.print_sorted()
+	[-10, 1, 2, 3]
