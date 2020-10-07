@@ -1,1 +1,6 @@
 	>>> MyList = __import__("1-my_list").MyList
+
+test empty list:
+	>>> a = MyList()
+	>>> a.print_sorted()
+	[]
