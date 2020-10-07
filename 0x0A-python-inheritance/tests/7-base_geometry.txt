@@ -45,7 +45,6 @@ test input list:
 	...     bg.integer_validator([], 13)
 	... except Exception as e:
 	...     print(e)
-	data must be an integer
 
 
 ########################
