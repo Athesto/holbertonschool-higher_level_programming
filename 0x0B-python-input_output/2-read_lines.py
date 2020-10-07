@@ -3,6 +3,7 @@
 
 
 def read_lines(filename="", nb_lines=0):
+    '''read_lines'''
 
     with open(filename, encoding="utf-8") as f:
         counter = 0
