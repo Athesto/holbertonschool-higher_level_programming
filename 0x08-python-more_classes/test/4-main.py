@@ -24,3 +24,6 @@ print("--")
 
 print(new_rectangle is my_rectangle)
 print(type(new_rectangle) is type(my_rectangle))
+r = new_rectangle
+print(r.width)
+print(r.height)
