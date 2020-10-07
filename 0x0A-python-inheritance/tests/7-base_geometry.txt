@@ -33,6 +33,20 @@ test empty integer_validator:
 	...     print(e)
 	integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+test input list:
+	>>> try:
+	...     bg.integer_validator("data", [])
+	... except Exception as e:
+	...     print(e)
+	data must be an integer
+
+test input list:
+	>>> try:
+	...     bg.integer_validator([], 13)
+	... except Exception as e:
+	...     print(e)
+	data must be an integer
+
 
 ########################
 #    UNUSEFUL TESTS    #
