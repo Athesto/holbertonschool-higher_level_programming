@@ -9,6 +9,7 @@ class MyList(list):
         list_sorted = self[:]
         list_sorted.sort()
         print(list_sorted)
+        del list_sorted
 
 if __name__ == "__main__":
     import doctest
