@@ -54,6 +54,13 @@ test input boolean:
 	...     print(e)
 	data must be an integer
 
+test input set:
+	>>> try:
+	...     bg.integer_validator("data", {1,3})
+	... except Exception as e:
+	...     print(e)
+	data must be an integer
+
 ########################
 #    UNUSEFUL TESTS    #
 ########################
