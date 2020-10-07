@@ -9,5 +9,9 @@ test 1:
 	[1, 2, 3]
 
 test 2:
-	>>> True
+	>>> type(a).__name__
+	'MyList'
+
+check parent:
+	>>> MyList.__base__ is list
 	True
