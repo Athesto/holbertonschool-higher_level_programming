@@ -5,7 +5,7 @@ test empty list:
 	>>> a.print_sorted()
 	[]
 
-test unsorted:
+test main file:
 	>>> a.append(3)
 	>>> a.append(1)
 	>>> a.append(2)
@@ -13,3 +13,10 @@ test unsorted:
 	[3, 1, 2]
 	>>> a.print_sorted()
 	[1, 2, 3]
+	>>> a
+	[3, 1, 2]
+
+
+------------------------------------
+unusefull
+------------------------------------
