@@ -4,7 +4,7 @@
 
 def pascal_triangle(n):
     '''pascal_triangle'''
-    if n <= 1:
+    if n <= 0:
         return []
     out = []
     prev = [1]
