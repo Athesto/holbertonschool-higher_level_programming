@@ -18,5 +18,4 @@ def pascal_triangle(n):
         new.append(1)
         prev = new[:]
         out.append(new[:])
-        print(out)
     return out
