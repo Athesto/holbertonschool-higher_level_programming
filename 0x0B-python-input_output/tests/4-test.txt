@@ -1,0 +1,5 @@
+>>> append_write = __import__('4-append_write').append_write
+>>> append_write("file_append.txt", "Holberton School is so cool!\n")
+29
+>>> append_write("file_append.txt", "Holberton School is so cool!\n")
+29

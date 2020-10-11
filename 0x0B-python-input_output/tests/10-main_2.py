@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 __import__('sys').path.append('.')
-MyClass = __import__('10-my_class').MyClass
+MyClass = __import__('10-my_class_2').MyClass
 class_to_json = __import__('10-class_to_json').class_to_json
 
 m = MyClass("John")
-m.number = 89
+m.win()
 print(type(m))
 print(m)
 

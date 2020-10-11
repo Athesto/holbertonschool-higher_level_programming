@@ -1,0 +1,29 @@
+>>> read_lines = __import__('2-read_lines').read_lines
+
+>>> read_lines("my_file_0.txt", -3)
+Holberton School offers a truly innovative approach to education:
+focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
+<BLANKLINE>
+A school every software engineer would have dreamt of!
+
+>>> read_lines("my_file_0.txt")
+Holberton School offers a truly innovative approach to education:
+focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
+<BLANKLINE>
+A school every software engineer would have dreamt of!
+
+>>> read_lines("my_file_0.txt", 99)
+Holberton School offers a truly innovative approach to education:
+focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
+<BLANKLINE>
+A school every software engineer would have dreamt of!
+
+>>> read_lines("my_file_0.txt", 1)
+Holberton School offers a truly innovative approach to education:
+
+>>> read_lines("my_file_0.txt", 3)
+Holberton School offers a truly innovative approach to education:
+focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers. 
+<BLANKLINE>
+
+
