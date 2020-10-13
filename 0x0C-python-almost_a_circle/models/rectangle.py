@@ -51,14 +51,14 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         '''setter'''
-        Rectangle.isInt('y', value)
+        Rectangle.isInt('x', value)
         # TODO: validation
         self.__x = value
 
     @y.setter
     def y(self, value):
         '''setter'''
-        Rectangle.isInt('x', value)
+        Rectangle.isInt('y', value)
         # TODO: validation
         self.__y = value
 
