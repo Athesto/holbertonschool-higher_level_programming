@@ -19,27 +19,36 @@ class Rectangle(Base):
         '''getter'''
         return self.__width
 
-    @width.setter
-    def width(self, value):
-        '''setter'''
-        # TODO: validation
-        self.__width = value
-
     @property
     def height(self):
         '''getter'''
         return self.__height
 
-    @height.setter
-    def height(self, value):
-        '''setter'''
-        # TODO: validation
-        self.__height = value
-
     @property
     def x(self):
         '''getter'''
         return self.__x
+
+    @property
+    def y(self):
+        '''getter'''
+        return self.__y
+
+    @width.setter
+    def width(self, value):
+        '''setter'''
+        # TODO: validation
+        if type(value) is not int:
+            return Rectangle.raise_TypeError('width')
+        self.__width = value
+
+    @height.setter
+    def height(self, value):
+        '''setter'''
+        if type(value) is not int:
+            return Rectangle.raise_TypeError('height')
+        # TODO: validation
+        self.__height = value
 
     @x.setter
     def x(self, value):
@@ -47,13 +56,12 @@ class Rectangle(Base):
         # TODO: validation
         self.__x = value
 
-    @property
-    def y(self):
-        '''getter'''
-        return self.__y
-
     @y.setter
     def y(self, value):
         '''setter'''
         # TODO: validation
         self.__y = value
+
+    @staticmethod
+    def raise_TypeError(attr):
+        raise TypeError("{} must be an integer".format(attr))
