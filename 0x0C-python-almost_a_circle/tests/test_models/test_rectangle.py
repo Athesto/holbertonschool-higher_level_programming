@@ -14,6 +14,12 @@ class TestRectangle(unittest.TestCase):
             Rectangle("11", 10)
         self.assertEqual(str(ar.exception), "width must be an integer")
 
+    def test_bol_width(self):
+        '''TypeError: str_width'''
+        with self.assertRaises(TypeError) as ar:
+            Rectangle(True, 10)
+        self.assertEqual(str(ar.exception), "width must be an integer")
+
     def test_str_height(self):
         '''TypeError: str_height'''
         with self.assertRaises(TypeError) as ar:
