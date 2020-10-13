@@ -39,6 +39,7 @@ class Rectangle(Base):
         '''setter'''
         # TODO: validation
         Rectangle.isInt('width', value)
+        Rectangle.checkValue('width', value)
         self.__width = value
 
     @height.setter
@@ -46,12 +47,14 @@ class Rectangle(Base):
         '''setter'''
         # TODO: validation
         Rectangle.isInt('height', value)
+        Rectangle.checkValue('height', value)
         self.__height = value
 
     @x.setter
     def x(self, value):
         '''setter'''
         Rectangle.isInt('x', value)
+        Rectangle.checkValue('x', value)
         # TODO: validation
         self.__x = value
 
@@ -59,6 +62,7 @@ class Rectangle(Base):
     def y(self, value):
         '''setter'''
         Rectangle.isInt('y', value)
+        Rectangle.checkValue('y', value)
         # TODO: validation
         self.__y = value
 
@@ -67,3 +71,10 @@ class Rectangle(Base):
         '''check if value is int'''
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(key))
+
+    @staticmethod
+    def checkValue(key, value):
+        if value <= 0 and key in ('width', 'height'):
+            raise ValueError("{} must be > 0".format(key))
+        if value < 0 and key in ('x', 'y'):
+            raise ValueError("{} must be >= 0".format(key))
