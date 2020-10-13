@@ -38,30 +38,32 @@ class Rectangle(Base):
     def width(self, value):
         '''setter'''
         # TODO: validation
-        if type(value) is not int:
-            return Rectangle.raise_TypeError('width')
+        Rectangle.isInt('width', value)
         self.__width = value
 
     @height.setter
     def height(self, value):
         '''setter'''
-        if type(value) is not int:
-            return Rectangle.raise_TypeError('height')
         # TODO: validation
+        Rectangle.isInt('height', value)
         self.__height = value
 
     @x.setter
     def x(self, value):
         '''setter'''
+        Rectangle.isInt('y', value)
         # TODO: validation
         self.__x = value
 
     @y.setter
     def y(self, value):
         '''setter'''
+        Rectangle.isInt('x', value)
         # TODO: validation
         self.__y = value
 
     @staticmethod
-    def raise_TypeError(attr):
-        raise TypeError("{} must be an integer".format(attr))
+    def isInt(key, value):
+        '''check if value is int'''
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(key))
