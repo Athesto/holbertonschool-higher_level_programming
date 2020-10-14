@@ -73,6 +73,15 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(4, 3)
         self.assertEqual(r.area(), 12)
 
+    def test___str__(self):
+        '''Rectangle(1,2,3,4,5)'''
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(str(r), "[Rectangle] (5) 3/4 - 1/2")
+
+    def test_display(self):
+        '''Area(4,3) = 12'''
+        pass
+
     # ------------------UNUSEFUL--------------------
 
     def test_width_bool(self):
