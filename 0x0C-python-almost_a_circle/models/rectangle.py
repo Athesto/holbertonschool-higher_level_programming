@@ -72,7 +72,9 @@ class Rectangle(Base):
         symbol = "#"
         out = ""
         out += symbol * self.width + '\n'
+        out = ' ' * self.x + out
         out *= self.height
+        out = '\n' * self.y + out
         out = out[:-1]
         print(out)
 
