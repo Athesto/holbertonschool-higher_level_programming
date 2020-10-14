@@ -66,6 +66,10 @@ class Rectangle(Base):
         # TODO: validation
         self.__y = value
 
+    def area(self):
+        '''area = width * height'''
+        return self.width * self.height
+
     @staticmethod
     def isInt(key, value):
         '''check if value is int'''
