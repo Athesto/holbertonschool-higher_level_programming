@@ -78,6 +78,14 @@ class Rectangle(Base):
         out = out[:-1]
         print(out)
 
+    def __str__(self):
+        return ("[{}] ({}) {}/{} - {}/{}".format('Rectangle',
+                                                 self.id,
+                                                 self.x,
+                                                 self.y,
+                                                 self.width,
+                                                 self.height))
+
     @staticmethod
     def isInt(key, value):
         '''check if value is int'''
