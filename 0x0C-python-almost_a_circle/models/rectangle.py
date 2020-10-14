@@ -45,7 +45,6 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         '''setter'''
-        # TODO: validation
         Rectangle.isInt('height', value)
         Rectangle.checkValue('height', value)
         self.__height = value
@@ -55,7 +54,6 @@ class Rectangle(Base):
         '''setter'''
         Rectangle.isInt('x', value)
         Rectangle.checkValue('x', value)
-        # TODO: validation
         self.__x = value
 
     @y.setter
@@ -63,12 +61,20 @@ class Rectangle(Base):
         '''setter'''
         Rectangle.isInt('y', value)
         Rectangle.checkValue('y', value)
-        # TODO: validation
         self.__y = value
 
     def area(self):
         '''area = width * height'''
         return self.width * self.height
+
+    def display(self):
+        '''dislpay the rectangle'''
+        symbol = "#"
+        out = ""
+        out += symbol * self.width + '\n'
+        out *= self.height
+        out = out[:-1]
+        print(out)
 
     @staticmethod
     def isInt(key, value):
