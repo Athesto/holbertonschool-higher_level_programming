@@ -68,10 +68,15 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 10, 0, -19)
         self.assertEqual(str(ar.exception), "y must be >= 0")
 
+    def test_area(self):
+        '''Area(4,3) = 12'''
+        r = Rectangle(4, 3)
+        self.assertEqual(r.area(), 12)
+
     # ------------------UNUSEFUL--------------------
 
-    def test_bol_width(self):
-        '''TypeError: bol_width'''
+    def test_width_bool(self):
+        '''TypeError: width = True'''
         with self.assertRaises(TypeError) as ar:
             Rectangle(True, 10)
         self.assertEqual(str(ar.exception), "width must be an integer")
