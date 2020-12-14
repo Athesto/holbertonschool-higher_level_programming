@@ -12,7 +12,7 @@ data = {
     "passwd": sys.argv[2],
     "db": sys.argv[3]
 }
-query = "SELECT * from states"
+query = "SELECT * from states ORDER BY id ASC"
 
 db = MySQLdb.connect(
     host=data["host"],
