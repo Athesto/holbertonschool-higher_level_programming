@@ -19,7 +19,9 @@ if __name__ == "__main__":
         host=data["host"],
         port=data["port"],
         passwd=data["passwd"],
-        db=data["db"])
+        db=data["db"],
+        charset="utf8"
+    )
 
     cur = db.cursor()
     cur.execute(query)
