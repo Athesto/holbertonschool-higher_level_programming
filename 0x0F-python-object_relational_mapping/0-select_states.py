@@ -25,8 +25,9 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute(query)
-    row = cur.fetchall()
+    array = cur.fetchall()
 
-    print(*row, sep="\n")
+    for data in array:
+        print(data)
     cur.close()
     db.close()
