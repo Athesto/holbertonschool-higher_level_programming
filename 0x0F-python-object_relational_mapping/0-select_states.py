@@ -20,7 +20,6 @@ if __name__ == "__main__":
         port=data["port"],
         passwd=data["passwd"],
         db=data["db"],
-        charset="utf8"
     )
 
     cur = db.cursor()
@@ -29,5 +28,6 @@ if __name__ == "__main__":
 
     for data in array:
         print(data)
+
     cur.close()
     db.close()
