@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """task from holberton"""
 
-if __name__ is "__main__":
+if __name__ == "__main__":
     import MySQLdb
     import sys
 
     data = {
         "host": "localhost",
-        "port": "3306",
+        "port": 3306,
         "user": sys.argv[1],
         "passwd": sys.argv[2],
         "db": sys.argv[3]
@@ -15,8 +15,9 @@ if __name__ is "__main__":
     query = "SELECT * from states ORDER BY id ASC"
 
     db = MySQLdb.connect(
-        host=data["host"],
         user=data["user"],
+        host=data["host"],
+        port=data["port"],
         passwd=data["passwd"],
         db=data["db"])
 
@@ -25,3 +26,5 @@ if __name__ is "__main__":
     row = cur.fetchall()
 
     print(*row, sep="\n")
+    cur.close()
+    db.close()
