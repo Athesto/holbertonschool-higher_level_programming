@@ -13,7 +13,7 @@ if __name__ == "__main__":
     }
 
     con = MySQLdb.connect(**credentials)
-    query = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+    query = "SELECT * FROM states WHERE BINARY name = '{}'".format(argv[4])
 
     with con.cursor() as cur:
         cur.execute(query)
