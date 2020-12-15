@@ -6,7 +6,8 @@
     3) connect to database using credentials
     4) create a cursor https://www.python.org/dev/peps/pep-0249/#id7
         A cursor is like a pointer to a database
-        A cursor is an iterator https://en.wikipedia.org/wiki/Cursor_(databases)
+        A cursor is an iterator
+            https://en.wikipedia.org/wiki/Cursor_(databases)
         4.1) send query through the pointer
         4.2) fetch all the results and save it
         4.3) print result saved
