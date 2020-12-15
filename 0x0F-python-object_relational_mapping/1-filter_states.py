@@ -14,7 +14,7 @@ if __name__ == "__main__":
     }
 
     connection = MySQLdb.connect(**credentials)
-    query = "SELECT * FROM states WHERE NAME like 'N%' ORDER BY id ASC;"
+    query = "SELECT * FROM states WHERE name like 'n%' ORDER BY id ASC;"
 
     with connection.cursor() as cursor:
         cursor.execute(query)
