@@ -1,11 +1,25 @@
 #!/usr/bin/python3
-"""task from holberton"""
+"""
+    task 0 connect, and query with MySQLdb
+    1) import libraries
+    2) dictonary with credentials and query
+    3) connect to database using credentials
+    4) create a cursor https://www.python.org/dev/peps/pep-0249/#id7
+        A cursor is like a pointer to a database
+        A cursor is an iterator https://en.wikipedia.org/wiki/Cursor_(databases)
+        4.1) send query through the pointer
+        4.2) fetch all the results and save it
+        4.3) print result saved
+    5) close connection to database
+"""
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
+    # 1)
+    import MySQLdb                  # connection mysql
+    import sys                      # argv
 
-    data = {
+    # 2)
+    credentials = {
         "host": "localhost",
         "port": 3306,
         "user": sys.argv[1],
@@ -14,20 +28,15 @@ if __name__ == "__main__":
     }
     query = "SELECT * from states ORDER BY id ASC"
 
-    db = MySQLdb.connect(
-        user=data["user"],
-        host=data["host"],
-        port=data["port"],
-        passwd=data["passwd"],
-        db=data["db"],
-    )
+    # 3)
+    db = MySQLdb.connect(**credentials)
 
-    cur = db.cursor()
-    cur.execute(query)
-    array = cur.fetchall()
+    # 4)
+    with db.cursor() as cur:            # create pointer to database
+        cur.execute(query)              # pointer excecute query
+        array = cur.fetchall()          # get answer in an array
+        for data in array:
+            print(data)
 
-    for data in array:
-        print(data)
-
-    cur.close()
-    db.close()
+    # 5)
+    db.close()                          # delete conection to db
