@@ -79,7 +79,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r), "[Rectangle] (5) 3/4 - 1/2")
 
     def test_display(self):
-        '''Area(4,3) = 12'''
+        '''TODO'''
         pass
 
     # ------------------UNUSEFUL--------------------

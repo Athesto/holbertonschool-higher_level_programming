@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ 8-main """
-from models.rectangle import Rectangle
 __import__("sys").path.append(".")
 
 
 def main():
+    from models.rectangle import Rectangle
 
     if __name__ == "__main__":
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+# /usr/bin/python3
 '''rectangle module'''
 from models.base import Base
 
@@ -78,8 +78,12 @@ class Rectangle(Base):
         out = out[:-1]
         print(out)
 
+    def update(self, *args):
+        '''update variables (id, width, height, x, y)'''
+        self.id, self.width, self.height, self.x, self.y = args
+
     def __str__(self):
-        '''[Class] (id) x/y - width/height'''
+        '''[Class](id) x/y - width/height'''
         return ("[{}] ({}) {}/{} - {}/{}".format('Rectangle',
                                                  self.id,
                                                  self.x,
