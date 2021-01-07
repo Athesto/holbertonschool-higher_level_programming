@@ -1,0 +1,34 @@
+	>>> __import__('0-add_integer').__name__
+	'0-add_integer'
+
+	>>> len(__import__('0-add_integer').__doc__) > 8
+	True
+
+	>>> import os
+	>>> os.popen("pep8 0-add_integer.py").read()
+	''
+	>>> module = __import__('0-add_integer')
+	>>> module.__dict__.get("add_integer") != None
+	True
+
+	>>> len(__import__('0-add_integer').add_integer.__doc__) > 8
+	True
+
+	>>> len(__import__('0-add_integer').add_integer.__doc__) > 8
+	True
+
+	>>> __import__('0-add_integer').add_integer(1,1)
+	2
+
+	>>> __import__('0-add_integer').add_integer(6.1,9.2)
+	15
+
+	>>> try: __import__('0-add_integer').add_integer("hello",1)
+	... except TypeError as e: print(e)
+	...
+	a must be an integer
+
+	>>> try: __import__('0-add_integer').add_integer(1, "hello")
+	... except TypeError as e: print(e)
+	...
+	b must be an integer
