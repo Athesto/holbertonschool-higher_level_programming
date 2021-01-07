@@ -22,9 +22,6 @@
 	>>> len(__import__('0-add_integer').add_integer.__doc__) > 8
 	True
 
-	>>> len(__import__('0-add_integer').add_integer.__doc__) > 8
-	True
-
 	>>> __import__('0-add_integer').add_integer(1,1)
 	2
 
