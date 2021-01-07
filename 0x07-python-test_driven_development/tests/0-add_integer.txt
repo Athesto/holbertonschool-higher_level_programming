@@ -1,6 +1,14 @@
 	>>> __import__('0-add_integer').__name__
 	'0-add_integer'
 
+	>>> import os
+	>>> os.popen('tail -1 0-add_integer.py | cat -e').read()[-1]
+	'\n'
+
+	>>> import os
+	>>> os.popen('ls tests/0-add_integer.txt').read()
+	'tests/0-add_integer.txt\n'
+
 	>>> len(__import__('0-add_integer').__doc__) > 8
 	True
 
