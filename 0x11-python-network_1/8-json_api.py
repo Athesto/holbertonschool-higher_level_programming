@@ -16,5 +16,7 @@ if __name__ == '__main__':
     req = post(**myobj)
     try:
         print("[{id}] {name}".format(**req.json()))
+    except ValueError:
+        print("Not a valid JSON")
     except:
         print("No result")
