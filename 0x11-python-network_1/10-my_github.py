@@ -9,14 +9,10 @@ if __name__ == '__main__':
     from sys import argv
     myobj = {
         "url":  "https://api.github.com/user",
-        "auth":
-            (
+        "auth": (
                 argv[1],
                 argv[2]
-            )
+        )
     }
     req = get(**myobj)
-    try:
-        print(req.json().get('id'))
-    except:
-        print("Not valid JSON")
+    print(req.json().get('id'))
