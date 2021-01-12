@@ -13,4 +13,3 @@ if __name__ == '__main__':
             print(req.read().decode('utf-8'))
     except error.HTTPError as err:
         print("Error code: {}". format(err.code))
-
