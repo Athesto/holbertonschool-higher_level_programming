@@ -18,5 +18,5 @@ if __name__ == '__main__':
         print("[{id}] {name}".format(**req.json()))
     except ValueError:
         print("Not a valid JSON")
-    except:
+    except Exception:
         print("No result")
