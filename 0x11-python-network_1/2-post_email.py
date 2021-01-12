@@ -14,4 +14,4 @@ if __name__ == '__main__':
 
 
     with request.urlopen(url,data) as req:
-        print("Your email is: {}".format(email))
+        print(req.read().decode('utf-8'))
