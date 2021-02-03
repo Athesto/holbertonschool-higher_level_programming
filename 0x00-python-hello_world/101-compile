@@ -1,2 +1,3 @@
 #!/bin/bash
-python -c $'import py_compile\npy_compile.compile('\"$PYFILE\"')'
+#set -x
+python3 -m py_compile $PYFILE
