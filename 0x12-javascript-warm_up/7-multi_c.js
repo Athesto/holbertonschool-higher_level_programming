@@ -1,10 +1,10 @@
 #!/usr/bin/node
 const times = process.argv[2];
-let msg;
+
 if (parseInt(times)) {
-  msg = 'C is fun\n'.repeat(times).slice(0, -1);
-  console.log(msg);
+  for (let i = 0; i < times; i++) {
+    console.log('C is fun');
+  }
 } else {
-  msg = 'Missing number of occurrences';
-  console.log(msg);
+  console.log('Missing number of occurrences');
 }
