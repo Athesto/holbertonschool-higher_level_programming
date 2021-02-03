@@ -1,4 +1,9 @@
-flags=-g -Wall -Werror -Wextra -pedantic
+CC=gcc
+CFLAGS=-g -Wall -Werror -Wextra -pedantic
+SRC=$@-*.c ./mains/$@-*.c
+
 
 10:
-	gcc $(flags) *.c ./test/*.c
+	rm -f a.out
+	$(CC) $(CFLAGS) $(SRC)
+	./a.out
