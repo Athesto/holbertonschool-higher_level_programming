@@ -6,6 +6,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	(void) list;
+	listint_t *runner = list;
+
+	while (runner && runner->next)
+	{
+		runner = runner->next;
+		if (runner == list)
+			return (1);
+	}
 	return (0);
+
 }
