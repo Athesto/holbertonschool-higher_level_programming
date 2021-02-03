@@ -6,12 +6,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *runner = list;
+	listint_t *turtle = list;
+	listint_t *rabbit = list;
 
-	while (runner && runner->next)
+	while (turtle && turtle->next && turtle->next->next)
 	{
-		runner = runner->next;
-		if (runner == list)
+		turtle = turtle->next;
+		rabbit = rabbit->next->next;
+		if (turtle == rabbit)
 			return (1);
 	}
 	return (0);
