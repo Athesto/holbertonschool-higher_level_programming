@@ -8,9 +8,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *turtle = list;
 	listint_t *rabbit = list;
-	int loops = 300;
 
-	while (turtle && turtle->next &&  rabbit && rabbit->next->next && loops--)
+	while (turtle && rabbit && rabbit->next)
 	{
 		turtle = turtle->next;
 		rabbit = rabbit->next->next;
