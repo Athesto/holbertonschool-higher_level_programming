@@ -1,3 +1,6 @@
 #!/usr/bin/node
-const myVar = process.argv.length > 2 ? 'Argument found' : 'No argument';
-console.log(myVar);
+
+const input = process.argv;
+let msg;
+if (input.length < 3) { msg = 'No argument'; } else { msg = 'Argument found'; }
+console.log(msg);
