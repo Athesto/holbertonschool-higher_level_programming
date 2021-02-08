@@ -1,0 +1,133 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "../lists.h"
+
+int test_1(void);
+int test_2(void);
+int test_3(void);
+int test_4(void);
+
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	printf("-----------------test01\n");
+	test_1();
+	printf("-----------------test02\n");
+	test_2();
+	printf("-----------------test03\n");
+	test_3();
+	printf("-----------------test04\n");
+	test_4();
+	return (0);
+}
+/**
+ * main - create list and test insert in NULL / empty list
+ *
+ * Return: Always 0.
+ */
+int test_4(void)
+{
+	listint_t *head;
+
+	head = NULL;
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 2);
+	print_listint(head);
+
+	printf("-----------------\n");
+
+	insert_node(&head, 3);
+	insert_node(&head, 4);
+	insert_node(&head, 5);
+
+	print_listint(head);
+
+	free_listint(head);
+
+	return (0);
+}
+
+/**
+ * main - create list and test insert in NULL / empty list
+ *
+ * Return: Always 0.
+ */
+int test_3(void)
+{
+	listint_t *head;
+
+	head = NULL;
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 2);
+	print_listint(head);
+
+	printf("-----------------\n");
+
+	insert_node(&head, -3);
+
+	print_listint(head);
+
+	free_listint(head);
+
+	return (0);
+}
+/**
+ * main - create list and test insert in NULL / empty list
+ *
+ * Return: Always 0.
+ */
+int test_2(void)
+{
+	listint_t *head;
+
+	head = NULL;
+	print_listint(head);
+
+	printf("-----------------\n");
+
+	insert_node(&head, 972);
+
+	print_listint(head);
+
+	free_listint(head);
+
+	return (0);
+}
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int test_1(void)
+{
+	listint_t *head;
+
+	head = NULL;
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 2);
+	add_nodeint_end(&head, 3);
+	add_nodeint_end(&head, 4);
+	add_nodeint_end(&head, 98);
+	add_nodeint_end(&head, 402);
+	add_nodeint_end(&head, 1024);
+	print_listint(head);
+
+	printf("-----------------\n");
+
+	insert_node(&head, 27);
+
+	print_listint(head);
+
+	free_listint(head);
+
+	return (0);
+}
