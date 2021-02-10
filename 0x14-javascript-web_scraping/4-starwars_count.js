@@ -9,7 +9,7 @@ request.get(apiUrl, function (err, resp, body) {
   let characterCounter = 0;
   movies.forEach(function (movie) {
     movie.characters.forEach(function (character) {
-      if (character === 'https://swapi-api.hbtn.io/api/people/' + characterId + '/') characterCounter++;
+      if (character.includes(characterId)) characterCounter++;
     });
   });
   console.log(characterCounter);
