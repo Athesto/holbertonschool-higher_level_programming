@@ -8,7 +8,7 @@ request.get('https://swapi-api.hbtn.io/api/films/', function (err, resp, body) {
   let characterCounter = 0;
   movies.forEach(function (movie) {
     movie.characters.forEach(function (character) {
-      if (character.search('people/' + characterId + '/') > 0) characterCounter++;
+      if (character === 'https://swapi-api.hbtn.io/api/people/' + characterId + '/') characterCounter++;
     });
   });
   console.log(characterCounter);
