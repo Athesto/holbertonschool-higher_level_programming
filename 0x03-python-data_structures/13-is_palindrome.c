@@ -25,11 +25,7 @@ static int compare_nodes(listint_t **forward, listint_t *backward)
  */
 int is_palindrome(listint_t **head)
 {
-	int i;
 	listint_t *runner = *head;
 
-	i = compare_nodes(&runner, runner);
-	print_listint(runner);
-
-	return (i);
+	return (compare_nodes(&runner, runner));
 }
