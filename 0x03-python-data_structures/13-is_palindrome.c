@@ -1,43 +1,35 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
-#define true 1
-#define false !true
-#define BUFSIZE 102400
+/**
+ * compare_nodes - run thro
+ * @forward: a forward runner of the list
+ * @backward: the same runner bit this will run backward
+ * Return: 0, is not palindrome or 1 if is palindrome
+ */
+static int compare_nodes(listint_t **forward, listint_t *backward)
+{
+	int is_pal = 0;
+
+	if (backward == NULL)
+		return (1);
+
+	is_pal = compare_nodes(forward, backward->next);
+	is_pal = is_pal && ((*forward)->n == backward->n);
+	*forward = (*forward)->next;
+	return (is_pal);
+}
 
 /**
- * is_palindrome - check if it's a palindrome list
- * @head: head list
- * Return: 1 is true or 0 is false
+ * is_palindrome - checks if a singly linked list is a palindrome.
+ * @head: reference of a list
+ * Return: 1 if is a linked, 0 Otherwise
  */
 int is_palindrome(listint_t **head)
 {
-	unsigned int l_len;		/* list len */
-	listint_t *runner = *head;	/* runner pointer */
-	int array[BUFSIZE];				/* array of numbers */
-	unsigned int a_idx;		/* array index */
+	int i;
+	listint_t *runner = *head;
 
-	/* check if it's a valid list */
-	if (!head || !*head || !(*head)->next)
-		return (true);
+	i = compare_nodes(&runner, runner);
+	print_listint(runner);
 
-	/* fill the array */
-	runner = *head;
-	for (a_idx = 0; runner; a_idx++)
-	{
-		l_len = a_idx;
-		array[a_idx] = runner->n;
-		runner = runner->next;
-	}
-	l_len++;
-
-	/* check array */
-	for (a_idx = 0; a_idx < l_len / 2; a_idx++)
-	{
-		if ((array[a_idx] - array[l_len - a_idx - 1]) != 0)
-		{
-			return (false);
-		}
-	}
-	return (true);
+	return (i);
 }
